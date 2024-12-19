@@ -18,49 +18,89 @@ import {
 } from "@/components/ui/tooltip"
 import Projects from './components/Projects'
 import Contact from './components/Contact'
+import About from './components/About'
+import ScrollLoadingCircle from './components/ScrollLoadingCircle'
+import CustomCursor from './components/CustomCursor';
+import { useState } from 'react'
+
 
 function App() {
   const { theme, setTheme } = useTheme();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className='w-1/2 mx-auto flex flex-col justify-center text-center'>
+    <div className='w-1/2 max-sm:w-80 mx-auto flex flex-col justify-center text-center'>
+      <CustomCursor />
+
       <Router>
+        <div className="fixed top-0 left-0 right-0 z-50 bg-white/50 dark:bg-slate-950/50 backdrop-blur-md flex items-center justify-between h-16 px-4">
+          <div className="flex items-center justify-between w-full max-w-screen-sm mx-auto">
+            <button
+              className="block sm:hidden px-2 py-1 text-gray-800 dark:text-gray-200"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <span className="sr-only">Toggle Menu</span>
+              {isOpen ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+              )}
+            </button>
         <NavigationMenu>
-          <div className="flex items-center justify-start h-16 px-4 space-x-8 w-full">
-            <NavigationMenuList className="flex items-center space-x-4">
-              <NavigationMenuItem>
-                <NavLink to="/">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Home
-                  </NavigationMenuLink>
-                </NavLink>
-                <NavLink to="/about">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    About
-                  </NavigationMenuLink>
-                </NavLink>
-                <NavLink to="/projects">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Projects
-                  </NavigationMenuLink>
-                </NavLink>
-                <NavLink to="/contact">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Contact
-                  </NavigationMenuLink>
-                </NavLink>
-              </NavigationMenuItem>
-            </NavigationMenuList>
+              <NavigationMenuList
+                className={`${isOpen ? "block" : "hidden"
+                  } sm:flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 absolute sm:static top-16 left-0 w-full sm:w-auto bg-white dark:bg-slate-950 sm:bg-transparent sm:dark:bg-transparent shadow-sm sm:shadow-none p-4 sm:p-0 z-40`}
+              >
+                <NavigationMenuItem>
+                  <NavLink to="/" className="mr-3">
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      Home
+                    </NavigationMenuLink>
+                  </NavLink>
+                  <NavLink to="/about" className="mr-3">
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      About
+                    </NavigationMenuLink>
+                  </NavLink>
+                  <NavLink to="/projects" className="mr-3">
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      Projects
+                    </NavigationMenuLink>
+                  </NavLink>
+                  <NavLink to="/contact">
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      Contact
+                    </NavigationMenuLink>
+                  </NavLink>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
 
             {/* Theme Toggle Button */}
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger>
                   <button
-                    onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                    className="px-4 py-2 rounded bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 transition-colors flex items-end"
+                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                    className="px-4 py-2 rounded bg-white dark:bg-slate-950 text-gray-800 dark:text-gray-200 transition-colors flex items-center justify-center"
                   >
-                    {theme === 'dark' ? (
+                    {theme === "dark" ? (
                       <SunIcon className="w-6 h-6 text-yellow-500" />
                     ) : (
                       <MoonIcon className="w-6 h-6 text-gray-800" />
@@ -69,26 +109,26 @@ function App() {
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>
-                    {theme === 'dark'
-                      ? 'Click to switch to light mode'
-                      : 'Click to switch to dark mode'}
+                    {theme === "dark"
+                      ? "Click to switch to light mode"
+                      : "Click to switch to dark mode"}
                   </p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
           </div>
-        </NavigationMenu>
+        </div>
 
 
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
         </Routes>
-
-
+        <ScrollLoadingCircle />
       </Router>
-      <footer className="py-6 text-white text-center">
+      <footer className="pb-6 text-white text-center">
         <p>&copy; 2024 Stefan. All rights reserved.</p>
         <div>
           <a href="https://github.com/yourusername" className="text-blue-400 mx-2">GitHub</a>

@@ -1,0 +1,23 @@
+/* src/components/CustomCursor.css */
+
+body {
+  cursor: none; /* Remove default cursor */
+}
+
+.cursor {
+  position: absolute;
+  background-color: #3b82f6; /* Custom cursor color */
+  border-radius: 50%;
+  pointer-events: none; /* Prevent interaction with cursor */
+  transition: width 0.1s, height 0.1s; /* Smooth resizing */
+  z-index: 9999; /* Ensure it's above all other elements */
+}
+
+/* Interactive elements should have their hover effect in CSS (no need to add JS listeners) */
+button:hover,
+a:hover,
+input:hover,
+textarea:hover {
+  /* This ensures that the default cursor is hidden and the custom one is used */
+  cursor: none;
+}

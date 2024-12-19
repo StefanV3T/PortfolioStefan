@@ -1,7 +1,7 @@
 const Contact = () => {
     return (
         <div className="flex items-center justify-center min-h-screen">
-            <div className="max-w-4xl mx-auto p-6 shadow-lg rounded-lg">
+            <div className="max-w-4xl mx-auto p-6">
                 <h1 className="text-4xl font-bold text-center mb-6">Contact me</h1>
                 <p className="text-lg text-center mb-6">
                     I'd love to hear from you! Please fill out the form below, and I'll get back to you as soon as possible.

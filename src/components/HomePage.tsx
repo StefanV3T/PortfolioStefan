@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/sheet"
 import { Link } from "react-router-dom"
 import { buttonVariants } from "@/components/ui/button"
-import { CodeBracketIcon, CpuChipIcon, LightBulbIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import { CodeBracketIcon, HandRaisedIcon, LightBulbIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import {
     Tooltip,
     TooltipContent,
@@ -34,19 +34,26 @@ import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
 import projectData from "@/Data/ProjectData"
 import skills from "@/Data/Skills"
+import TypingEffect from "react-typing-effect";
 
 const HomePage = () => {
     const { theme } = useTheme();
 
     return (
         <>
-            <section className="hero py-32 px-6 text-center">
+            <section className="hero my-16 mt-32 px-6 text-center">
                 <div className="container mx-auto">
                     <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                        Hi, I'm Stefan <CpuChipIcon className="inline-block h-8 w-8 text-blue-500" />
+                        Hi, I'm Stefan <HandRaisedIcon className="inline-block w-10 h-10 animate-wave" />
                     </h1>
                     <p className="text-xl md:text-2xl mb-6">
-                        An 18-year-old aspiring Full-Stack Software Developer <CodeBracketIcon className="inline-block h-8 w-8 text-blue-500" />
+                        <TypingEffect
+                            text={[` An 18-year-old aspiring Full-Stack Software Developer`]}
+                            speed={50}
+                            eraseDelay={2000}
+                            eraseSpeed={1}
+                        />
+                        <CodeBracketIcon className="inline-block h-8 w-8 text-blue-500" />
                     </p>
                     <p className="text-lg mb-8">
                         I'm passionate about coding, building dynamic web applications, and continuously learning new technologies. <LightBulbIcon className="inline-block h-6 w-6 text-blue-500" />
@@ -58,7 +65,7 @@ const HomePage = () => {
             </section>
             <Separator />
 
-            <Tabs defaultValue="education" className="w-full">
+            <Tabs defaultValue="education" className="w-full my-16">
                 <TabsList className="w-full">
                     <TabsTrigger value="education" className="w-1/2">Education</TabsTrigger>
                     <TabsTrigger value="work" className="w-1/2">Work</TabsTrigger>
@@ -213,7 +220,7 @@ const HomePage = () => {
             </Tabs>
             <Separator />
 
-            <section className="skills py-16 px-6">
+            <section className="skills my-16 px-6">
                 <div className="container mx-auto">
                     <h2 className="text-3xl font-bold text-center mb-8">My Skills</h2>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
@@ -236,7 +243,7 @@ const HomePage = () => {
                 </div>
             </section>
             <Separator />
-            <section className="projects pb-16 px-6">
+            <section className="projects my-16 px-6">
                 <h2 className="text-4xl font-extrabold text-center mb-12">
                     Featured Projects
                 </h2>
