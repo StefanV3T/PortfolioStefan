@@ -23,6 +23,8 @@ import ScrollLoadingCircle from './components/ScrollLoadingCircle'
 import CustomCursor from './components/CustomCursor';
 import { useState } from 'react'
 import ScrollToTop from './components/ScrollToTop'
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
 
   return (
     <div className='w-1/2 max-sm:w-80 mx-auto flex flex-col justify-center text-center'>
+      <SpeedInsights />
+      <Analytics />
       <CustomCursor />
 
       <Router>
