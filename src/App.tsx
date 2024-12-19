@@ -23,7 +23,7 @@ import ScrollLoadingCircle from './components/ScrollLoadingCircle'
 import CustomCursor from './components/CustomCursor';
 import { useState } from 'react'
 import ScrollToTop from './components/ScrollToTop'
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Analytics } from "@vercel/analytics/react"
 
 
