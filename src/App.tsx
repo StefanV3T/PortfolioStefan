@@ -70,22 +70,22 @@ function App() {
                   } sm:flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 absolute sm:static top-0 left-0 w-full sm:w-auto bg-white dark:bg-slate-950 sm:bg-transparent sm:dark:bg-transparent shadow-sm sm:shadow-none sm:p-0 z-40`}
               >
                 <NavigationMenuItem>
-                  <NavLink to="/" className="mr-3">
+                  <NavLink to="/" className="mr-3" onClick={() => setIsOpen(!isOpen)}>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                       Home
                     </NavigationMenuLink>
                   </NavLink>
-                  <NavLink to="/about" className="mr-3">
+                  <NavLink to="/about" className="mr-3" onClick={() => setIsOpen(!isOpen)}>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                       About
                     </NavigationMenuLink>
                   </NavLink>
-                  <NavLink to="/projects" className="mr-3">
+                  <NavLink to="/projects" className="mr-3" onClick={() => setIsOpen(!isOpen)}>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                       Projects
                     </NavigationMenuLink>
                   </NavLink>
-                  <NavLink to="/contact">
+                  <NavLink to="/contact" onClick={() => setIsOpen(!isOpen)}>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                       Contact
                     </NavigationMenuLink>
@@ -133,9 +133,9 @@ function App() {
       <footer className="pb-6 text-white text-center">
         <p>&copy; 2024 Stefan. All rights reserved.</p>
         <div>
-          <a href="https://github.com/yourusername" className="text-blue-400 mx-2">GitHub</a>
-          <a href="https://linkedin.com/in/yourusername" className="text-blue-400 mx-2">LinkedIn</a>
-          <a href="https://twitter.com/yourusername" className="text-blue-400 mx-2">Twitter</a>
+          <a href="https://github.com/StefanV3T" target='_blank' className="text-blue-400 mx-2">GitHub</a>
+          <a href="https://www.linkedin.com/in/stefan-vet-44164b2a9/" target='_blank' className="text-blue-400 mx-2">LinkedIn</a>
+          <a href="https://www.instagram.com/stefan.vet/" target='_blank' className="text-blue-400 mx-2">Instagram</a>
         </div>
       </footer>
     </div>
