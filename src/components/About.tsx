@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const About = () => {
     return (
-        <section className="min-h-screen flex flex-col justify-center items-center p-8">
+        <section className="min-h-screen flex flex-col sm:justify-center sm:items-center p-8 max-sm:mt-16">
             <motion.div
                 className="max-w-4xl w-full text-center"
                 initial={{ opacity: 0 }}

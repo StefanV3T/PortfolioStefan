@@ -1,6 +1,6 @@
 const Contact = () => {
     return (
-        <div className="flex items-center justify-center min-h-screen">
+        <div className="flex sm:items-center sm:justify-center max-sm:mt-16 min-h-screen">
             <div className="max-w-4xl mx-auto p-6">
                 <h1 className="text-4xl font-bold text-center mb-6">Contact me</h1>
                 <p className="text-lg text-center mb-6">

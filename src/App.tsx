@@ -22,6 +22,7 @@ import About from './components/About'
 import ScrollLoadingCircle from './components/ScrollLoadingCircle'
 import CustomCursor from './components/CustomCursor';
 import { useState } from 'react'
+import ScrollToTop from './components/ScrollToTop'
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
       <CustomCursor />
 
       <Router>
+        <ScrollToTop />
         <div className="fixed top-0 left-0 right-0 z-50 bg-white/50 dark:bg-slate-950/50 backdrop-blur-md flex items-center justify-between h-16 px-4">
           <div className="flex items-center justify-between w-full max-w-screen-sm mx-auto">
             <button
@@ -65,7 +67,7 @@ function App() {
         <NavigationMenu>
               <NavigationMenuList
                 className={`${isOpen ? "block" : "hidden"
-                  } sm:flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 absolute sm:static top-16 left-0 w-full sm:w-auto bg-white dark:bg-slate-950 sm:bg-transparent sm:dark:bg-transparent shadow-sm sm:shadow-none p-4 sm:p-0 z-40`}
+                  } sm:flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 absolute sm:static top-0 left-0 w-full sm:w-auto bg-white dark:bg-slate-950 sm:bg-transparent sm:dark:bg-transparent shadow-sm sm:shadow-none sm:p-0 z-40`}
               >
                 <NavigationMenuItem>
                   <NavLink to="/" className="mr-3">

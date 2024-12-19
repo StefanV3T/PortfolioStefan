@@ -1,31 +1,47 @@
-// src/components/CustomCursor.tsx
-
 import { useEffect, useState } from "react";
 import './CustomCursor.css';
 
 const CustomCursor = () => {
-    const [cursorSize, setCursorSize] = useState<number>(20); // Default size of the cursor
+    const [cursorSize, setCursorSize] = useState<number>(20);
+    const [isDesktop, setIsDesktop] = useState<boolean>(true);
 
     useEffect(() => {
-        // Function to update the cursor size based on hover state
+        const checkDeviceType = () => {
+            if (window.innerWidth < 768) {
+                setIsDesktop(false);
+            } else {
+                setIsDesktop(true);
+            }
+        };
+
+        checkDeviceType();
+
+        window.addEventListener("resize", checkDeviceType);
+
+        return () => {
+            window.removeEventListener("resize", checkDeviceType);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (!isDesktop) return;
+
         const handleMouseEnter = () => {
-            setCursorSize(30); // Increase size when hovering over interactive elements
+            setCursorSize(30);
         };
 
         const handleMouseLeave = () => {
-            setCursorSize(20); // Reset size to default when mouse leaves
+            setCursorSize(20);
         };
 
-        // Select all interactive elements and add hover event listeners
+
         const interactiveElements = [
             'button',
             'a',
             'input',
             'textarea',
-            '.interactive', // Add any custom classes if needed
         ];
 
-        // Add event listeners to all interactive elements
         interactiveElements.forEach(selector => {
             const elements = document.querySelectorAll(selector);
             elements.forEach((element) => {
@@ -34,7 +50,6 @@ const CustomCursor = () => {
             });
         });
 
-        // Update cursor position on mouse move
         const handleMouseMove = (e: MouseEvent) => {
             const cursor = document.querySelector(".cursor") as HTMLElement;
             if (cursor) {
@@ -43,10 +58,8 @@ const CustomCursor = () => {
             }
         };
 
-        // Add mousemove event listener
         window.addEventListener("mousemove", handleMouseMove);
 
-        // Cleanup event listeners
         return () => {
             interactiveElements.forEach(selector => {
                 const elements = document.querySelectorAll(selector);
@@ -58,7 +71,12 @@ const CustomCursor = () => {
 
             window.removeEventListener("mousemove", handleMouseMove);
         };
-    }, []);
+    }, [isDesktop]);
+
+    if (!isDesktop) {
+        document.body.style.cursor = "default";
+        return null;
+    }
 
     return (
         <div

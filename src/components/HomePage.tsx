@@ -35,9 +35,13 @@ import { Badge } from "@/components/ui/badge"
 import projectData from "@/Data/ProjectData"
 import skills from "@/Data/Skills"
 import TypingEffect from "react-typing-effect";
+import { useInView } from "react-intersection-observer";
 
 const HomePage = () => {
     const { theme } = useTheme();
+    const { ref, inView } = useInView({
+        threshold: 0.1, // Trigger when 10% of the element is in view
+    });
 
     return (
         <>
@@ -47,13 +51,21 @@ const HomePage = () => {
                         Hi, I'm Stefan <HandRaisedIcon className="inline-block w-10 h-10 animate-wave" />
                     </h1>
                     <p className="text-xl md:text-2xl mb-6">
-                        <TypingEffect
+                        <div ref={ref}>
+                            {inView ? (
+
+                                <TypingEffect
                             text={[` An 18-year-old aspiring Full-Stack Software Developer`]}
                             speed={50}
                             eraseDelay={2000}
                             eraseSpeed={1}
-                        />
+                                />                                
+                            ) : (
+                                <div style={{ height: "1em" }}></div>
+                            )}
                         <CodeBracketIcon className="inline-block h-8 w-8 text-blue-500" />
+
+                        </div>
                     </p>
                     <p className="text-lg mb-8">
                         I'm passionate about coding, building dynamic web applications, and continuously learning new technologies. <LightBulbIcon className="inline-block h-6 w-6 text-blue-500" />
