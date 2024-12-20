@@ -25,6 +25,7 @@ import { useState } from 'react'
 import ScrollToTop from './components/ScrollToTop'
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Analytics } from "@vercel/analytics/react"
+import RandomFactNotifier from './components/RandomFactNotifier'
 
 
 function App() {
@@ -33,9 +34,10 @@ function App() {
 
   return (
     <div className='w-1/2 max-sm:w-80 mx-auto flex flex-col justify-center text-center'>
+      <CustomCursor />
+
       <SpeedInsights />
       <Analytics />
-      <CustomCursor />
 
       <Router>
         <ScrollToTop />
@@ -133,8 +135,9 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
         <ScrollLoadingCircle />
+        <RandomFactNotifier />
       </Router>
-      <footer className="pb-6 text-white text-center">
+      <footer className="pb-6 text-center">
         <p>&copy; 2024 Stefan. All rights reserved.</p>
         <div>
           <a href="https://github.com/StefanV3T" target='_blank' className="text-blue-400 mx-2">GitHub</a>
