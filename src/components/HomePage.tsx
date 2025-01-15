@@ -36,6 +36,7 @@ import projectData from "@/Data/ProjectData"
 import skills from "@/Data/Skills"
 import TypingEffect from "react-typing-effect";
 import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion"
 
 const HomePage = () => {
     const { theme } = useTheme();
@@ -44,7 +45,9 @@ const HomePage = () => {
     });
 
     return (
-        <>
+        <motion.div initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}>
             <section className="hero my-16 mt-32 px-6 text-center">
                 <div className="container mx-auto">
                     <h1 className="text-4xl md:text-6xl font-bold mb-4">
@@ -315,7 +318,7 @@ const HomePage = () => {
             </section>
 
 
-        </>
+        </motion.div>
     )
 }
 

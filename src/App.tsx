@@ -23,6 +23,9 @@ import ScrollLoadingCircle from './components/ScrollLoadingCircle'
 import CustomCursor from './components/CustomCursor';
 import { useState } from 'react'
 import ScrollToTop from './components/ScrollToTop'
+import { SpeedInsights } from "@vercel/speed-insights/react"
+import { Analytics } from "@vercel/analytics/react"
+import RandomFactNotifier from './components/RandomFactNotifier'
 
 
 function App() {
@@ -32,6 +35,9 @@ function App() {
   return (
     <div className='w-1/2 max-sm:w-80 mx-auto flex flex-col justify-center text-center'>
       <CustomCursor />
+
+      <SpeedInsights />
+      <Analytics />
 
       <Router>
         <ScrollToTop />
@@ -70,22 +76,22 @@ function App() {
                   } sm:flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 absolute sm:static top-0 left-0 w-full sm:w-auto bg-white dark:bg-slate-950 sm:bg-transparent sm:dark:bg-transparent shadow-sm sm:shadow-none sm:p-0 z-40`}
               >
                 <NavigationMenuItem>
-                  <NavLink to="/" className="mr-3">
+                  <NavLink to="/" className="mr-3" onClick={() => setIsOpen(!isOpen)}>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                       Home
                     </NavigationMenuLink>
                   </NavLink>
-                  <NavLink to="/about" className="mr-3">
+                  <NavLink to="/about" className="mr-3" onClick={() => setIsOpen(!isOpen)}>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                       About
                     </NavigationMenuLink>
                   </NavLink>
-                  <NavLink to="/projects" className="mr-3">
+                  <NavLink to="/projects" className="mr-3" onClick={() => setIsOpen(!isOpen)}>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                       Projects
                     </NavigationMenuLink>
                   </NavLink>
-                  <NavLink to="/contact">
+                  <NavLink to="/contact" onClick={() => setIsOpen(!isOpen)}>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                       Contact
                     </NavigationMenuLink>
@@ -129,13 +135,14 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
         <ScrollLoadingCircle />
+        <RandomFactNotifier />
       </Router>
-      <footer className="pb-6 text-white text-center">
+      <footer className="pb-6 text-center">
         <p>&copy; 2024 Stefan. All rights reserved.</p>
         <div>
-          <a href="https://github.com/yourusername" className="text-blue-400 mx-2">GitHub</a>
-          <a href="https://linkedin.com/in/yourusername" className="text-blue-400 mx-2">LinkedIn</a>
-          <a href="https://twitter.com/yourusername" className="text-blue-400 mx-2">Twitter</a>
+          <a href="https://github.com/StefanV3T" target='_blank' className="text-blue-400 mx-2">GitHub</a>
+          <a href="https://www.linkedin.com/in/stefan-vet-44164b2a9/" target='_blank' className="text-blue-400 mx-2">LinkedIn</a>
+          <a href="https://www.instagram.com/stefan.vet/" target='_blank' className="text-blue-400 mx-2">Instagram</a>
         </div>
       </footer>
     </div>

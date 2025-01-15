@@ -22,16 +22,18 @@ const About = () => {
 
                 <div className="flex justify-center space-x-6">
                     <motion.a
-                        href="https://www.linkedin.com"
+                        href="https://www.linkedin.com/in/stefan-vet-44164b2a9/"
                         className="text-blue-600 hover:text-blue-800 transition duration-300"
                         whileHover={{ scale: 1.1 }}
+                        target='_blank'
                     >
                         LinkedIn
                     </motion.a>
                     <motion.a
-                        href="https://github.com"
+                        href="https://github.com/StefanV3T"
                         className="text-blue-600 hover:text-blue-800 transition duration-300"
                         whileHover={{ scale: 1.1 }}
+                        target='_blank'
                     >
                         GitHub
                     </motion.a>
