@@ -62,10 +62,10 @@ const Blogs: React.FC = () => {
                                         className="w-full h-40 object-cover rounded-t-lg"
                                     />
                                 </CardHeader>
-                                <CardTitle className="text-xl mt-4">
+                                <CardTitle className="text-xl mx-3">
                                     {post.title}
                                 </CardTitle>
-                                <CardDescription className="mt-2 text-gray-600">
+                                <CardDescription className="mb-2 mx-3 text-gray-600">
                                     {post.description}
                                 </CardDescription>
                             </Card>

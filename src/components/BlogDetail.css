@@ -8,16 +8,15 @@
 }
 
 .markdownContent h1 {
-    font-size: 2.25rem;
-    /* Default size for h1 */
+    font-size: 2rem;
+        /* Default size for larger screens */
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     font-weight: bold;
 }
 
 .markdownContent h2 {
-    font-size: 1.875rem;
-    /* Default size for h2 */
+    font-size: 1.75rem;
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     font-weight: bold;
@@ -25,7 +24,6 @@
 
 .markdownContent h3 {
     font-size: 1.5rem;
-    /* Default size for h3 */
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     font-weight: bold;
@@ -33,7 +31,6 @@
 
 .markdownContent h4 {
     font-size: 1.25rem;
-    /* Default size for h4 */
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     font-weight: bold;
@@ -41,7 +38,6 @@
 
 .markdownContent h5 {
     font-size: 1.125rem;
-    /* Default size for h5 */
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     font-weight: bold;
@@ -49,7 +45,6 @@
 
 .markdownContent h6 {
     font-size: 1rem;
-    /* Default size for h6 */
     margin-top: 0.5rem;
     margin-bottom: 1rem;
     font-weight: bold;
@@ -57,7 +52,7 @@
 
 .markdownContent p {
     margin-bottom: 1rem;
-    font-size: 16px;
+    font-size: 15px;
 }
 
 .markdownContent img {
@@ -107,4 +102,41 @@
 
 .markdownContent a:hover {
     text-decoration: none;
+}
+/* Responsive styles for phones */
+@media (max-width: 768px) {
+    .markdownContent h1 {
+        font-size: 1.75rem;
+        /* Slightly smaller for phone screens */
+    }
+
+    .markdownContent h2 {
+        font-size: 1.5rem;
+    }
+
+    .markdownContent h3 {
+        font-size: 1.25rem;
+    }
+
+    .markdownContent h4 {
+        font-size: 1.125rem;
+    }
+
+    .markdownContent h5 {
+        font-size: 1rem;
+    }
+
+    .markdownContent h6 {
+        font-size: 0.875rem;
+    }
+
+    .markdownContent p {
+        font-size: 14px;
+        /* Adjust font size for better readability on smaller screens */
+    }
+
+    .markdownContent pre {
+        font-size: 13px;
+        /* Slightly smaller for code blocks */
+    }
 }

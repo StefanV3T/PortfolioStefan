@@ -98,6 +98,11 @@ function App() {
                       Contact
                     </NavigationMenuLink>
                   </NavLink>
+                  <NavLink to="/blogs" onClick={() => setIsOpen(!isOpen)}>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                      Blogs
+                    </NavigationMenuLink>
+                  </NavLink>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
