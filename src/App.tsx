@@ -26,6 +26,8 @@ import ScrollToTop from './components/ScrollToTop'
 import { SpeedInsights } from "@vercel/speed-insights/react"
 import { Analytics } from "@vercel/analytics/react"
 import RandomFactNotifier from './components/RandomFactNotifier'
+import Blogs from './components/Blogs'
+import BlogDetail from './components/BlogDetail'
 
 
 function App() {
@@ -133,6 +135,9 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:slug" element={<BlogDetail />} />
+
         </Routes>
         <ScrollLoadingCircle />
         <RandomFactNotifier />
