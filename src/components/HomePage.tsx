@@ -155,6 +155,16 @@ const HomePage = () => {
                 <TabsContent value="work">
                     <Card>
                         <CardHeader className="flex items-center gap-4">
+                            <a href="https://www.grufix.nl/" target="_blank">
+                                <img src="/img/Grufix_svg.png" alt="Grufix" className="w-16 h-16 rounded-md m-auto" />
+                                <div>
+                                    <CardDescription>Jan 2025 - present</CardDescription>
+                                    <CardTitle>Grufix</CardTitle>
+                                    <CardDescription>Co-owner</CardDescription>
+                                </div>
+                            </a>
+                        </CardHeader>
+                        <CardHeader className="flex items-center gap-4">
                             <Sheet>
                                 <SheetTrigger className="flex flex-col items-center gap-4 justify-center">
 

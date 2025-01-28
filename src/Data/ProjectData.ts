@@ -44,6 +44,14 @@ const projectData = [
         link: `https://tijdvoorkoken.nl/`,
         imageUrl: '/img/projects/tijdvoorkoken.png',
         tags: ["PHP", "Wordpress", "CSS", "Gutenberg"]
+    },
+    {
+        id: 6,
+        title: 'Brew master',
+        description: `Brew Master: Your ultimate guide to perfect coffee. Discover brewing methods, explore premium equipment, try delicious recipes, and stay inspired with our blog.,`,
+        link: `https://brew-master-peach.vercel.app/`,
+        imageUrl: '/img/projects/brewmaster.png',
+        tags: ["React", "Next.js", "Tailwind CSS"]
     }
 ]
 
