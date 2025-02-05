@@ -57,7 +57,7 @@ const Blogs: React.FC = () => {
                             <Card className="hover:shadow-lg transition-shadow duration-300 mb-8">
                                 <CardHeader>
                                     <img
-                                        src={post.image || '/path/to/default-image.jpg'}
+                                        src={`/files/${post.image}`}
                                         alt={post.title}
                                         className="w-full h-40 object-cover rounded-t-lg"
                                     />
