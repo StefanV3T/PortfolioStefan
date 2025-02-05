@@ -1,0 +1,6 @@
+# Allow all crawlers to access all pages
+User-agent: *
+Disallow: 
+
+# Sitemap file location
+Sitemap: https://www.stefanvet.nl/sitemap.xml
