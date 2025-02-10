@@ -48,7 +48,7 @@ const HomePage = () => {
         <motion.div initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1 }}>
-            <section className="hero my-16 mt-32 px-6 text-center">
+            <section className="hero min-h-screen flex items-center justify-center my-16 px-6 text-center">
                 <div className="container mx-auto">
                     <h1 className="text-4xl md:text-6xl font-bold mb-4">
                         Hi, I'm Stefan <HandRaisedIcon className="inline-block w-10 h-10 animate-wave" />
@@ -56,18 +56,16 @@ const HomePage = () => {
                     <p className="text-xl md:text-2xl mb-6">
                         <div ref={ref}>
                             {inView ? (
-
                                 <TypingEffect
-                            text={[` An 18-year-old aspiring Full-Stack Software Developer`]}
-                            speed={50}
-                            eraseDelay={2000}
-                            eraseSpeed={1}
-                                />                                
+                                    text={[` An 18-year-old aspiring Full-Stack Software Developer`]}
+                                    speed={50}
+                                    eraseDelay={2000}
+                                    eraseSpeed={1}
+                                />
                             ) : (
                                 <div style={{ height: "1em" }}></div>
                             )}
-                        <CodeBracketIcon className="inline-block h-8 w-8 text-blue-500" />
-
+                            <CodeBracketIcon className="inline-block h-8 w-8 text-blue-500" />
                         </div>
                     </p>
                     <p className="text-lg mb-8">
@@ -78,6 +76,8 @@ const HomePage = () => {
                     </Link>
                 </div>
             </section>
+
+
             <Separator />
 
             <Tabs defaultValue="education" className="w-full my-16">

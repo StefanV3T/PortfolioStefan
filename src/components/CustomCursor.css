@@ -6,12 +6,33 @@ body {
 
 .cursor {
   position: absolute;
-  background-color: #3b82f6; /* Custom cursor color */
+  width: 12px;
+    height: 12px;
+    background-color: rgba(59, 130, 246, 0.9);
+    /* Slightly transparent blue */
   border-radius: 50%;
-  pointer-events: none; /* Prevent interaction with cursor */
-  transition: width 0.1s, height 0.1s; /* Smooth resizing */
-  z-index: 9999; /* Ensure it's above all other elements */
+  pointer-events: none;
+    /* Prevent interaction */
+    transition: transform 0.15s ease-out, background-color 0.2s ease-in-out;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.6);
+    /* Soft glow */
+  }
+  
+  /* When hovering over interactive elements */
+  .cursor.hover {
+    transform: scale(1.5);
+    background-color: rgba(59, 130, 246, 1);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
+  }
+  
+  /* When clicking */
+  .cursor.active {
+    transform: scale(0.8);
+    background-color: rgba(37, 99, 235, 1);
+    /* Darker blue */
 }
+
 
 /* Interactive elements should have their hover effect in CSS (no need to add JS listeners) */
 button:hover,
